@@ -40,3 +40,18 @@ ExternalProject_Add(
 )
 set(DEP_LIST ${DEP_LIST} dep_glfw)
 set(DEP_LIBS ${DEP_LIBS} glfw3) 
+##### glad
+ExternalProject_Add(
+    dep_glad
+    GIT_REPOSITORY "https://github.com/Dav1dde/glad.git"
+    GIT_TAG "v0.1.34" # branch / tag 지정
+    GIT_SHALLOW 1 # 가장 최신의 내역만 다운
+    UPDATE_COMMAND "" # git update 안씀
+    PATCH_COMMAND "" # 사용자가 고치는 옵션 안씀
+    TEST_COMMAND ""
+    CMAKE_ARGS 
+        -DCMAKE_INSTALL_PREFIX=${DEP_INSTALL_DIR} #cmake configure 시 사용 : -D(변수=값) , CMAKE_INSTALL_PREFIX:인스톨 경로
+        -DGLAD_INSTALL=ON
+    )
+set(DEP_LIST ${DEP_LIST} dep_glad)
+set(DEP_LIBS ${DEP_LIBS} glad) 
