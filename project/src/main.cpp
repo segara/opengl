@@ -25,8 +25,8 @@ int main(int argc, const char** argv)
     SPDLOG_INFO("start main loop");
     while(!glfwWindowShouldClose(window))
     {
-         glfwSwapBuffers(window);
-        //glfwPollEvents(); 
+         //glfwSwapBuffers(window);
+        glfwPollEvents(); 
         // keyboard event, mouse event, window size 변경등의 event 수집 
         // 1/60초 만큼 이벤트를 수집하고 처리
         // 
