@@ -39,17 +39,17 @@ int main(int argc, const char** argv)
     }
 
     auto glVersion = glGetString(GL_VERSION);
-    SPDLOG_INFO("OpenGL context version :{}", glVerion);
+    SPDLOG_INFO("OpenGL context version :{}", glVersion);
 
     //glfw 루프 실행, 윈도우 close시 종료
     SPDLOG_INFO("start main loop");
     while(!glfwWindowShouldClose(window))
     {
-         //glfwSwapBuffers(window);
+    
         glfwPollEvents(); 
         // keyboard event, mouse event, window size 변경등의 event 수집 
-        // 1/60초 만큼 이벤트를 수집하고 처리
-        // 
+        // window에 대한 처리만(렌더링x)
+        //glfwPollEvents 내부는 windows인 경우 : while(peekmessage) 로 구현 -> DispatchMessage : WM_DESTROY 등의 메세지를 메세지 처리함수로 보냄
     }
   
 

@@ -44,7 +44,7 @@ set(DEP_LIBS ${DEP_LIBS} glfw3)
 ExternalProject_Add(
     dep_glad
     GIT_REPOSITORY "https://github.com/Dav1dde/glad.git"
-    GIT_TAG "v0.1.34" # branch / tag 지정
+    GIT_TAG "v0.1.36" # branch / tag 지정
     GIT_SHALLOW 1 # 가장 최신의 내역만 다운
     UPDATE_COMMAND "" # git update 안씀
     PATCH_COMMAND "" # 사용자가 고치는 옵션 안씀
